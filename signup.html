@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – RoadWay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-side">
+    <div class="auth-side-logo"><div class="mark">🚐</div><span class="name">RoadWay</span></div>
+    <h2>Join 12,000+ Happy Travellers</h2>
+    <p>Create your account and start booking group rides in seconds. Fast, safe, and affordable.</p>
+    <div class="auth-side-feats">
+      <div class="auth-feat"><div class="auth-feat-icon">🔒</div>Bank-level secure payments</div>
+      <div class="auth-feat"><div class="auth-feat-icon">🧑‍✈️</div>Verified &amp; trained drivers</div>
+      <div class="auth-feat"><div class="auth-feat-icon">📡</div>Real-time GPS tracking</div>
+      <div class="auth-feat"><div class="auth-feat-icon">🕐</div>24/7 customer support</div>
+    </div>
+  </div>
+  <div class="auth-form-side">
+    <div class="auth-box">
+      <a href="index.html" style="display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);margin-bottom:28px;"><div style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;">🚐</div>Road<span style="color:var(--primary);">Way</span></a>
+      <h2>Create Account</h2>
+      <p class="auth-sub">Start your journey with RoadWay today</p>
+      <form id="signupForm">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">First Name</label><div style="position:relative;"><span class="input-icon">👤</span><input type="text" class="form-control" placeholder="Rahul" required /></div></div>
+          <div class="form-group"><label class="form-label">Last Name</label><div style="position:relative;"><span class="input-icon">👤</span><input type="text" class="form-control" placeholder="Sharma" required /></div></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email Address</label><div style="position:relative;"><span class="input-icon">📧</span><input type="email" class="form-control" placeholder="rahul@example.com" required /></div></div>
+        <div class="form-group"><label class="form-label">Phone Number</label><div style="position:relative;"><span class="input-icon">📞</span><input type="tel" class="form-control" placeholder="+91 98765 43210" required /></div></div>
+        <div class="form-group"><label class="form-label">Password</label><div class="password-wrap" style="position:relative;"><span class="input-icon">🔒</span><input type="password" class="form-control" id="password" placeholder="Create a strong password" required /><button type="button" class="pwd-toggle">👁️</button></div></div>
+        <div class="form-group"><label class="form-label">Confirm Password</label><div class="password-wrap" style="position:relative;"><span class="input-icon">🔒</span><input type="password" class="form-control" id="cpassword" placeholder="Repeat your password" required /><button type="button" class="pwd-toggle">👁️</button></div></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:0.83rem;color:var(--text-muted);">
+          <input type="checkbox" id="terms" required style="margin-top:3px;accent-color:var(--primary);" />
+          <label for="terms">I agree to the <a href="#" style="color:var(--primary);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--primary);font-weight:600;">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-full">🚀 Create My Account</button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="login.html">Log In →</a></p>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

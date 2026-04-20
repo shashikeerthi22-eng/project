@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Trip – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<nav class="navbar solid">
+  <a href="index.html" class="nav-logo"><div class="logo-mark">🚐</div>Road<span>Way</span></a>
+  <div class="nav-cta"><a href="user-dashboard.html" class="btn btn-ghost btn-sm">← Dashboard</a></div>
+</nav>
+
+<div style="padding-top:68px;" class="track-layout">
+  <!-- Map -->
+  <div class="map-zone">
+    <div class="map-grid-overlay"></div>
+    <div class="map-pin-from">📍</div>
+    <div class="map-pin-to">🏁</div>
+    <div class="map-vehicle">🚐</div>
+    <div class="map-center">
+      <div class="map-big-icon">🗺️</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:var(--text-2);">Live GPS Tracking</div>
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Updating every 5 seconds</div>
+      <span class="badge badge-success" style="margin-top:12px;">● Live</span>
+    </div>
+  </div>
+
+  <!-- Tracking Panel -->
+  <div class="track-panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+      <h3>Trip Tracking</h3>
+      <span class="badge badge-info">🔵 En Route</span>
+    </div>
+
+    <!-- Driver -->
+    <div class="driver-card">
+      <div class="drv-av">RK</div>
+      <div style="flex:1;">
+        <div class="drv-name">Rajesh Kumar</div>
+        <div class="drv-vehicle">🚐 TT Van · KA 05 AB 1234</div>
+        <div class="drv-rating">★★★★★ 4.9</div>
+      </div>
+      <a href="tel:+919876543210" class="btn btn-success btn-sm">📞</a>
+    </div>
+
+    <!-- Route -->
+    <div class="route-card">
+      <div class="route-pt"><div class="dot dot-from"></div><div><div class="route-lbl">Whitefield, Bangalore</div><div class="route-sub">Pickup point</div></div></div>
+      <div class="route-connector" style="margin-left:5px;margin-bottom:10px;"></div>
+      <div class="route-pt"><div class="dot dot-to"></div><div><div class="route-lbl">Electronic City, Bangalore</div><div class="route-sub">Drop point</div></div></div>
+    </div>
+
+    <!-- Stats -->
+    <div class="trip-stats">
+      <div class="t-stat"><div class="num">12 min</div><div class="lbl">ETA</div></div>
+      <div class="t-stat"><div class="num">8.4 km</div><div class="lbl">Remaining</div></div>
+      <div class="t-stat"><div class="num">42 km/h</div><div class="lbl">Speed</div></div>
+    </div>
+
+    <!-- Progress -->
+    <div style="font-size:0.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;">Trip Progress</div>
+    <div class="progress-timeline">
+      <div class="pt-step done"><div class="pt-circle">✓</div><div><div class="pt-ttl">Booking Confirmed</div><div class="pt-sub">9:00 AM · Done</div></div></div>
+      <div class="pt-step done"><div class="pt-circle">✓</div><div><div class="pt-ttl">Driver Assigned</div><div class="pt-sub">9:02 AM · Rajesh Kumar</div></div></div>
+      <div class="pt-step active"><div class="pt-circle">🚐</div><div><div class="pt-ttl">Driver En Route</div><div class="pt-sub">Now · Arriving in ~12 min</div></div></div>
+      <div class="pt-step"><div class="pt-circle">▶</div><div><div class="pt-ttl">Trip Started</div><div class="pt-sub">Pending</div></div></div>
+      <div class="pt-step"><div class="pt-circle">🏁</div><div><div class="pt-ttl">Trip Completed</div><div class="pt-sub">Pending</div></div></div>
+    </div>
+
+    <button class="btn btn-danger btn-full btn-md" onclick="showToast('SOS alert sent to emergency contacts!','error')" style="margin-top:8px;">🆘 Emergency SOS</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

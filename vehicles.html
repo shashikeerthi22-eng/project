@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Vehicles – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<nav class="navbar solid">
+  <a href="index.html" class="nav-logo"><div class="logo-mark">🚐</div>Road<span>Way</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="vehicles.html" class="active">Vehicles</a></li>
+    <li><a href="index.html#how-it-works">How it Works</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="user-dashboard.html" class="btn btn-ghost btn-sm">My Dashboard</a>
+    <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav-overlay"></div>
+<div class="mobile-nav"><button class="mob-nav-close">✕ Close</button><div class="mob-nav-links"><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="user-dashboard.html">Dashboard</a></div><div class="mob-nav-cta"><a href="booking.html" class="btn btn-primary btn-md btn-full">Book Now</a></div></div>
+
+<div class="page-banner">
+  <h1>Our <span style="color:rgba(255,255,255,0.85);">Vehicle Fleet</span> 🚐</h1>
+  <p>Filter by type, capacity, and price — find your perfect ride</p>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="filters-row" data-reveal>
+      <button class="filter-pill on" data-filter="all">🚘 All Vehicles</button>
+      <button class="filter-pill" data-filter="car">🚗 Cars</button>
+      <button class="filter-pill" data-filter="tt">🚐 TT Vans</button>
+      <button class="filter-pill" data-filter="tempo">🚌 Tempo Traveller</button>
+      <button class="filter-pill" data-filter="minibus">🚍 Mini Bus</button>
+      <select class="sort-select">
+        <option>Sort: Recommended</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Top Rated</option>
+      </select>
+    </div>
+
+    <div class="vehicle-grid">
+      <div class="vehicle-card" data-type="car" data-reveal data-delay="0">
+        <div class="vc-thumb"><div class="vc-label">Popular</div>🚗</div>
+        <div class="vc-body"><div class="vc-name">Swift Dzire</div><div class="vc-meta"><span>👥 4 Seats</span><span>⭐ 4.9</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹12</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="car" data-reveal data-delay="60">
+        <div class="vc-thumb">🚙</div>
+        <div class="vc-body"><div class="vc-name">Toyota Innova</div><div class="vc-meta"><span>👥 7 Seats</span><span>⭐ 4.8</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹16</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="tt" data-reveal data-delay="120">
+        <div class="vc-thumb"><div class="vc-label">Best Value</div>🚐</div>
+        <div class="vc-body"><div class="vc-name">Force Traveller 9</div><div class="vc-meta"><span>👥 9 Seats</span><span>⭐ 4.7</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹18</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="tt" data-reveal data-delay="180">
+        <div class="vc-thumb">🚐</div>
+        <div class="vc-body"><div class="vc-name">Mahindra Bolero</div><div class="vc-meta"><span>👥 10 Seats</span><span>⭐ 4.6</span><span>🌬️ Non-AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹14</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="tempo" data-reveal data-delay="240">
+        <div class="vc-thumb"><div class="vc-label">Group</div>🚌</div>
+        <div class="vc-body"><div class="vc-name">Tempo Traveller 12</div><div class="vc-meta"><span>👥 12 Seats</span><span>⭐ 4.9</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹22</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="tempo" data-reveal data-delay="300">
+        <div class="vc-thumb">🚌</div>
+        <div class="vc-body"><div class="vc-name">Tempo Traveller 16</div><div class="vc-meta"><span>👥 16 Seats</span><span>⭐ 4.7</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹26</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="minibus" data-reveal data-delay="360">
+        <div class="vc-thumb">🚍</div>
+        <div class="vc-body"><div class="vc-name">Mini Bus 20</div><div class="vc-meta"><span>👥 20 Seats</span><span>⭐ 4.6</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹28</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+      <div class="vehicle-card" data-type="minibus" data-reveal data-delay="420">
+        <div class="vc-thumb"><div class="vc-label">Event</div>🚍</div>
+        <div class="vc-body"><div class="vc-name">Mini Bus 26</div><div class="vc-meta"><span>👥 26 Seats</span><span>⭐ 4.5</span><span>❄️ AC</span></div><div class="vc-price-row"><div class="vc-price"><span class="big">₹35</span><span class="sm">/km</span></div><div class="vc-actions"><a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a><a href="booking.html" class="btn btn-primary btn-sm">Book</a></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

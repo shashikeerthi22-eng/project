@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Registration – RoadWay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-side" style="background:linear-gradient(150deg,#059669 0%,#065F46 100%);">
+    <div class="auth-side-logo"><div class="mark">🧑‍✈️</div><span class="name">Driver Registration</span></div>
+    <h2>Join RoadWay as a Driver</h2>
+    <p>Register your profile and vehicle to start accepting ride requests.</p>
+    <div class="auth-side-feats">
+      <div class="auth-feat"><div class="auth-feat-icon">🚗</div>Fast onboarding for new drivers</div>
+      <div class="auth-feat"><div class="auth-feat-icon">💼</div>Manage trips from your dashboard</div>
+      <div class="auth-feat"><div class="auth-feat-icon">📈</div>Grow your earnings every week</div>
+      <div class="auth-feat"><div class="auth-feat-icon">🛡️</div>Safe and insured rides</div>
+    </div>
+  </div>
+  <div class="auth-form-side">
+    <div class="auth-box">
+      <a href="driver-login.html" style="display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);margin-bottom:28px;"><div style="width:32px;height:32px;background:linear-gradient(135deg,#059669,#065F46);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;">🚐</div>Road<span style="color:#059669;">Way</span></a>
+      <h2>Driver Application</h2>
+      <p class="auth-sub">Submit your details and vehicle information.</p>
+      <form id="driverSignupForm">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">First Name</label><div style="position:relative;"><span class="input-icon">👤</span><input type="text" class="form-control" placeholder="Rahul" required /></div></div>
+          <div class="form-group"><label class="form-label">Last Name</label><div style="position:relative;"><span class="input-icon">👤</span><input type="text" class="form-control" placeholder="Sharma" required /></div></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email</label><div style="position:relative;"><span class="input-icon">📧</span><input type="email" class="form-control" placeholder="driver@roadway.in" required /></div></div>
+        <div class="form-group"><label class="form-label">Phone Number</label><div style="position:relative;"><span class="input-icon">📞</span><input type="tel" class="form-control" placeholder="+91 98765 43210" required /></div></div>
+        <div class="form-group"><label class="form-label">License Number</label><div style="position:relative;"><span class="input-icon">🪪</span><input type="text" class="form-control" placeholder="KA05AB1234" required /></div></div>
+        <div class="form-group"><label class="form-label">Vehicle Type</label><div style="position:relative;"><span class="input-icon">🚐</span><select class="form-control" required><option value="">Select type</option><option value="car">Car</option><option value="tt">TT Van</option><option value="tempo">Tempo Traveller</option><option value="minibus">Mini Bus</option></select></div></div>
+        <div class="form-group"><label class="form-label">Vehicle Number</label><div style="position:relative;"><span class="input-icon">🚘</span><input type="text" class="form-control" placeholder="KA05AB1234" required /></div></div>
+        <div class="form-group"><label class="form-label">Password</label><div class="password-wrap" style="position:relative;"><span class="input-icon">🔒</span><input type="password" class="form-control" id="driverPassword" placeholder="Create a strong password" required /><button type="button" class="pwd-toggle">👁️</button></div></div>
+        <div class="form-group"><label class="form-label">Confirm Password</label><div class="password-wrap" style="position:relative;"><span class="input-icon">🔒</span><input type="password" class="form-control" id="driverCPassword" placeholder="Repeat your password" required /><button type="button" class="pwd-toggle">👁️</button></div></div>
+        <button type="submit" class="btn btn-success btn-lg btn-full">🚚 Apply as Driver</button>
+      </form>
+      <p class="auth-switch" style="margin-top:20px;"><a href="driver-login.html">← Back to Driver Login</a></p>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

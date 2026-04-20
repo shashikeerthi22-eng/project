@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Login – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-side" style="background:linear-gradient(150deg,#059669 0%,#065F46 100%);">
+    <div class="auth-side-logo"><div class="mark">🧑‍✈️</div><span class="name">Driver Portal</span></div>
+    <h2>Drive &amp; Earn with RoadWay</h2>
+    <p>Accept ride requests, manage your trips, and track your earnings — all from one dashboard.</p>
+    <div class="auth-side-feats">
+      <div class="auth-feat"><div class="auth-feat-icon">💰</div>Earn ₹40,000+ per month</div>
+      <div class="auth-feat"><div class="auth-feat-icon">📋</div>Manage ride requests easily</div>
+      <div class="auth-feat"><div class="auth-feat-icon">📊</div>Track daily earnings &amp; stats</div>
+      <div class="auth-feat"><div class="auth-feat-icon">🛡️</div>Insured &amp; supported 24/7</div>
+    </div>
+  </div>
+  <div class="auth-form-side">
+    <div class="auth-box">
+      <a href="index.html" style="display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);margin-bottom:28px;"><div style="width:32px;height:32px;background:linear-gradient(135deg,#059669,#065F46);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;">🚐</div>Road<span style="color:#059669;">Way</span></a>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#D1FAE5;border:1px solid #A7F3D0;border-radius:999px;padding:5px 14px;font-size:0.75rem;font-weight:700;color:#065F46;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;">🧑‍✈️ Driver Portal</div>
+      <h2>Driver Login</h2>
+      <p class="auth-sub">Access your dashboard and accept ride requests</p>
+      <form id="driverLoginForm">
+        <div class="form-group"><label class="form-label">Driver Email / ID</label><div style="position:relative;"><span class="input-icon">📧</span><input type="email" class="form-control" placeholder="driver@roadway.in" required /></div></div>
+        <div class="form-group"><label class="form-label">Password</label><div class="password-wrap" style="position:relative;"><span class="input-icon">🔒</span><input type="password" class="form-control" placeholder="Your password" required /><button type="button" class="pwd-toggle">👁️</button></div></div>
+        <div style="display:flex;align-items:center;gap:10px;margin:14px 0;font-size:0.83rem;color:var(--text-muted);">
+          <input type="checkbox" id="rememberMe" style="accent-color:#059669;" />
+          <label for="rememberMe">Keep me logged in on this device</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-full">🧑‍✈️ Login to Driver Dashboard</button>
+      </form>
+      <p class="auth-switch" style="margin-top:20px;">Not a driver yet? <a href="driver-signup.html" style="color:#059669;">Apply to Drive</a></p>
+      <p class="auth-switch" style="margin-top:8px;"><a href="login.html">← Back to User Login</a></p>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoadWay – Group Travel & Event Transportation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">🚐</div>
+    Road<span>Way</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="vehicles.html">Vehicles</a></li>
+    <li><a href="#how-it-works">How it Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="driver-login.html" class="btn btn-ghost btn-sm">Driver Login</a>
+    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay"></div>
+<div class="mobile-nav">
+  <button class="mob-nav-close">✕ Close</button>
+  <div class="mob-nav-links">
+    <a href="index.html">Home</a>
+    <a href="vehicles.html">Vehicles</a>
+    <a href="#how-it-works">How it Works</a>
+    <a href="#contact">Contact</a>
+    <a href="driver-login.html">Driver Login</a>
+    <a href="login.html">Login</a>
+  </div>
+  <div class="mob-nav-cta">
+    <a href="signup.html" class="btn btn-primary btn-md btn-full">Sign Up Free</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-shape2"></div>
+  <div class="hero-dots"></div>
+  <span class="float-icon" style="top:18%;left:6%;animation-delay:0s;">🚗</span>
+  <span class="float-icon" style="top:22%;right:8%;animation-delay:1s;">🚐</span>
+  <span class="float-icon" style="bottom:20%;left:4%;animation-delay:2s;">🗺️</span>
+  <span class="float-icon" style="bottom:25%;right:5%;animation-delay:1.5s;">📍</span>
+
+  <div class="hero-content">
+    <!-- Left -->
+    <div data-reveal>
+      <div class="hero-eyebrow">
+        <span class="live-dot"></span>
+        Live in 50+ Cities Across India
+      </div>
+      <h1 class="hero-h1">Book <span class="gradient-text">Group Travel</span> in Seconds</h1>
+      <p class="hero-sub">TT Vans · Tempo Travellers · Cars · Mini Buses. Safe, affordable & verified drivers for group trips, events & corporate travel.</p>
+      <div class="hero-actions">
+        <a href="vehicles.html" class="btn btn-primary btn-xl">🚀 Book a Ride</a>
+        <a href="#how-it-works" class="btn btn-outline btn-xl">How it Works</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" data-count="12000" data-suffix="+">0+</div>
+          <div class="hero-stat-lbl">Happy Travellers</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="500" data-suffix="+">0+</div>
+          <div class="hero-stat-lbl">Verified Drivers</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="50" data-suffix="+">0+</div>
+          <div class="hero-stat-lbl">Cities Covered</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Widget -->
+    <div class="booking-widget" data-reveal="right">
+      <div class="widget-title">🗺️ Quick Booking</div>
+
+      <div class="loc-line">
+        <div class="loc-dot from"></div>
+        <div style="flex:1;">
+          <input type="text" class="form-control no-icon" id="heroPickup" placeholder="Pickup location — city or area" />
+        </div>
+      </div>
+      <div class="loc-connector" style="margin-left:5px;"></div>
+      <div class="loc-line">
+        <div class="loc-dot to"></div>
+        <div style="flex:1;">
+          <input type="text" class="form-control no-icon" id="heroDrop" placeholder="Drop location — destination" />
+        </div>
+      </div>
+
+      <div class="widget-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Vehicle Type</label>
+          <div style="position:relative;">
+            <span class="input-icon">🚐</span>
+            <select class="form-control">
+              <option value="">Select type</option>
+              <option>Car – 4 Seater</option>
+              <option>TT Van – 9 Seater</option>
+              <option>Tempo Traveller – 12 Seater</option>
+              <option>Mini Bus – 20+ Seater</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Travel Date</label>
+          <div style="position:relative;">
+            <span class="input-icon">📅</span>
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-full" id="findRideBtn" style="margin-top:18px;font-size:1.02rem;">
+        🔍 Find Available Rides
+      </button>
+
+      <div style="display:flex;align-items:center;gap:10px;margin-top:18px;justify-content:center;">
+        <span style="font-size:0.78rem;color:var(--text-muted);">🔒 Secure &amp; Instant confirmation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLES SECTION -->
+<section class="section section-alt" id="vehicles">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Our Fleet</span>
+      <h2>Choose Your <span class="gradient-text">Ride</span></h2>
+      <p>From solo trips to large group events — we have the perfect vehicle for every occasion and budget.</p>
+    </div>
+    <div class="vehicle-grid">
+      <div class="vehicle-card" data-reveal data-delay="0">
+        <div class="vc-thumb"><div class="vc-label">Popular</div>🚗</div>
+        <div class="vc-body">
+          <div class="vc-name">Standard Car</div>
+          <div class="vc-meta"><span>👥 4 Seats</span><span>⭐ 4.9</span><span>❄️ AC</span></div>
+          <div class="vc-price-row">
+            <div class="vc-price"><span class="big">₹12</span><span class="sm">/km</span></div>
+            <div class="vc-actions">
+              <a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a>
+              <a href="booking.html" class="btn btn-primary btn-sm">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vehicle-card" data-reveal data-delay="80">
+        <div class="vc-thumb"><div class="vc-label">Best Value</div>🚐</div>
+        <div class="vc-body">
+          <div class="vc-name">TT Van</div>
+          <div class="vc-meta"><span>👥 9 Seats</span><span>⭐ 4.8</span><span>❄️ AC</span></div>
+          <div class="vc-price-row">
+            <div class="vc-price"><span class="big">₹18</span><span class="sm">/km</span></div>
+            <div class="vc-actions">
+              <a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a>
+              <a href="booking.html" class="btn btn-primary btn-sm">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vehicle-card" data-reveal data-delay="160">
+        <div class="vc-thumb"><div class="vc-label">Group</div>🚌</div>
+        <div class="vc-body">
+          <div class="vc-name">Tempo Traveller</div>
+          <div class="vc-meta"><span>👥 12 Seats</span><span>⭐ 4.9</span><span>❄️ AC</span></div>
+          <div class="vc-price-row">
+            <div class="vc-price"><span class="big">₹22</span><span class="sm">/km</span></div>
+            <div class="vc-actions">
+              <a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a>
+              <a href="booking.html" class="btn btn-primary btn-sm">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vehicle-card" data-reveal data-delay="240">
+        <div class="vc-thumb"><div class="vc-label">Event</div>🚍</div>
+        <div class="vc-body">
+          <div class="vc-name">Mini Bus</div>
+          <div class="vc-meta"><span>👥 20+ Seats</span><span>⭐ 4.7</span><span>❄️ AC</span></div>
+          <div class="vc-price-row">
+            <div class="vc-price"><span class="big">₹28</span><span class="sm">/km</span></div>
+            <div class="vc-actions">
+              <a href="vehicle-details.html" class="btn btn-ghost btn-sm">Details</a>
+              <a href="booking.html" class="btn btn-primary btn-sm">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;" data-reveal>
+      <a href="vehicles.html" class="btn btn-outline btn-lg">View All Vehicles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-white" id="how-it-works">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Simple Process</span>
+      <h2>Book in <span class="gradient-text">4 Easy Steps</span></h2>
+      <p>From pickup to drop — the entire booking experience takes under 2 minutes.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-box" data-reveal data-delay="0"><div class="step-num">1</div><div class="step-icon-lg">📍</div><div class="step-ttl">Enter Locations</div><p class="step-desc">Enter your pickup and destination to get started instantly.</p></div>
+      <div class="step-box" data-reveal data-delay="100"><div class="step-num">2</div><div class="step-icon-lg">🚐</div><div class="step-ttl">Select Vehicle</div><p class="step-desc">Pick from cars, TT vans, tempo travellers or mini buses.</p></div>
+      <div class="step-box" data-reveal data-delay="200"><div class="step-num">3</div><div class="step-icon-lg">✅</div><div class="step-ttl">Confirm Booking</div><p class="step-desc">Review your details and price, then confirm with one click.</p></div>
+      <div class="step-box" data-reveal data-delay="300"><div class="step-num">4</div><div class="step-icon-lg">🎉</div><div class="step-ttl">Enjoy Your Trip</div><p class="step-desc">Track your driver live and enjoy a safe, comfortable journey.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Why RoadWay</span>
+      <h2>Everything You <span class="gradient-text">Need</span></h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card" data-reveal data-delay="0"><div class="feat-icon">🔒</div><div class="feat-ttl">Secure Booking</div><p class="feat-desc">Encrypted payments and data protection on every booking.</p></div>
+      <div class="feature-card" data-reveal data-delay="60"><div class="feat-icon">🧑‍✈️</div><div class="feat-ttl">Verified Drivers</div><p class="feat-desc">Background-checked, licensed drivers with 3+ years experience.</p></div>
+      <div class="feature-card" data-reveal data-delay="120"><div class="feat-icon">💰</div><div class="feat-ttl">Transparent Pricing</div><p class="feat-desc">No hidden charges. See the full price before confirming.</p></div>
+      <div class="feature-card" data-reveal data-delay="180"><div class="feat-icon">📡</div><div class="feat-ttl">Live Tracking</div><p class="feat-desc">Real-time GPS tracking shared with you and your contacts.</p></div>
+      <div class="feature-card" data-reveal data-delay="240"><div class="feat-icon">🕐</div><div class="feat-ttl">24/7 Support</div><p class="feat-desc">Round-the-clock assistance via chat, call, or email.</p></div>
+      <div class="feature-card" data-reveal data-delay="300"><div class="feat-icon">⚡</div><div class="feat-ttl">Instant Confirmation</div><p class="feat-desc">Get your booking confirmed in seconds via SMS and email.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Reviews</span>
+      <h2>Loved by <span class="gradient-text">Travellers</span></h2>
+    </div>
+    <div class="testi-slider" data-reveal>
+      <div class="testi-track">
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Booked a Tempo Traveller for our family trip to Coorg. Punctual, spotless vehicle, and the driver knew all the best routes. Absolutely fantastic!"</p><div class="testi-author"><div class="testi-av">RK</div><div><div class="testi-name">Rahul Khanna</div><div class="testi-role">Family Trip · Bangalore</div></div></div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Used RoadWay for our office team outing. 2 TT Vans arrived on time. Pricing was very transparent — no surprises at checkout!"</p><div class="testi-author"><div class="testi-av">PS</div><div><div class="testi-name">Priya Sharma</div><div class="testi-role">Corporate Event · Pune</div></div></div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★⭐</div><p class="testi-text">"Super easy app. Booked a mini bus for our college trip in 3 minutes! The driver was so friendly and the AC was perfect."</p><div class="testi-author"><div class="testi-av">AJ</div><div><div class="testi-name">Arjun Joshi</div><div class="testi-role">College Trip · Mumbai</div></div></div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Arranged wedding transportation with multiple vehicles. Everything was coordinated perfectly. Highly recommend for events!"</p><div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sneha Mehta</div><div class="testi-role">Wedding Event · Delhi</div></div></div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Live tracking gave us total peace of mind. Customer support was also very responsive when I had a query. 5 stars!"</p><div class="testi-author"><div class="testi-av">VR</div><div><div class="testi-name">Vijay Rao</div><div class="testi-role">Pilgrimage · Chennai</div></div></div></div>
+      </div>
+      <div class="slider-nav">
+        <button class="sl-btn sl-prev">←</button>
+        <button class="sl-btn sl-next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Contact Us</span>
+      <h2>Get In <span class="gradient-text">Touch</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal="left">
+        <h3>We're Here<br>to Help You</h3>
+        <p>Have a question about booking or need a custom quote for your event? Send us a message and we'll respond within 24 hours.</p>
+        <div class="contact-items">
+          <div class="c-item"><div class="c-icon">📧</div><div><div class="c-ttl">Email</div><div class="c-val">support@roadway.in</div></div></div>
+          <div class="c-item"><div class="c-icon">📞</div><div><div class="c-ttl">Phone</div><div class="c-val">+91 98765 43210</div></div></div>
+          <div class="c-item"><div class="c-icon">📍</div><div><div class="c-ttl">Office</div><div class="c-val">Tech Park, Whitefield, Bangalore – 560066</div></div></div>
+        </div>
+      </div>
+      <div class="contact-form-wrap" data-reveal="right">
+        <form id="contactForm">
+          <div class="form-group"><label class="form-label">Your Name</label><div style="position:relative;"><span class="input-icon">👤</span><input type="text" class="form-control" placeholder="Rahul Sharma" required /></div></div>
+          <div class="form-group"><label class="form-label">Email Address</label><div style="position:relative;"><span class="input-icon">📧</span><input type="email" class="form-control" placeholder="rahul@example.com" required /></div></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-control" placeholder="Tell us about your travel requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message 💜</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-name"><div class="logo-mark" style="width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;">🚐</div>Road<span>Way</span></div>
+        <p>India's most trusted group travel and event transportation platform. Safe, affordable, and reliable journeys for every occasion.</p>
+        <div class="footer-socials">
+          <a href="#" class="soc-btn">𝕏</a><a href="#" class="soc-btn">in</a><a href="#" class="soc-btn">f</a><a href="#" class="soc-btn">▶</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="vehicles.html">Vehicles</a></li><li><a href="#how-it-works">How it Works</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Account</h5><ul class="footer-links"><li><a href="signup.html">Sign Up</a></li><li><a href="login.html">User Login</a></li><li><a href="driver-login.html">Driver Login</a></li><li><a href="admin-login.html">Admin</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="#">Wedding Transport</a></li><li><a href="#">Corporate Events</a></li><li><a href="#">College Trips</a></li><li><a href="#">Pilgrimage Tours</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 RoadWay Technologies Pvt. Ltd. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Dashboard – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="dash-wrap">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sb-logo">
+      <div class="mark">🚐</div>
+      <span class="name">Road<span style="color:var(--success);">Way</span></span>
+    </div>
+    <div class="sb-section-label">Driver Menu</div>
+    <nav class="sb-nav">
+      <a class="sb-item active" href="driver-dashboard.html"><div class="si">🏠</div>Overview</a>
+      <a class="sb-item" href="#" onclick="showToast('Ride requests loaded','info')"><div class="si">📋</div>Ride Requests<span class="badge-count">3</span></a>
+      <a class="sb-item" href="#" onclick="showToast('My trips loaded','info')"><div class="si">🕐</div>My Trips</a>
+      <a class="sb-item" href="#" onclick="showToast('Earnings loaded','info')"><div class="si">💰</div>Earnings</a>
+      <a class="sb-item" href="#" onclick="showToast('Vehicle info loaded','info')"><div class="si">🚐</div>My Vehicle</a>
+      <a class="sb-item" href="#" onclick="showToast('Profile editor','info')"><div class="si">👤</div>Profile</a>
+    </nav>
+    <div class="sb-footer">
+      <a class="sb-item" href="driver-login.html" style="color:var(--danger);"><div class="si" style="background:var(--danger-light);">🚪</div>Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="dash-main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn sb-toggle">☰</button>
+        <div class="topbar-title" id="driverTopbarTitle">Driver Dashboard 🧑‍✈️</div>
+      </div>
+      <div class="topbar-right">
+        <!-- Online toggle -->
+        <div style="display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:6px 16px;">
+          <span style="font-size:0.8rem;color:var(--text-muted);font-weight:600;">Status:</span>
+          <label style="display:flex;align-items:center;gap:9px;cursor:pointer;">
+            <input type="checkbox" id="onlineSwitch" checked style="display:none;" />
+            <div style="width:42px;height:24px;background:var(--success);border-radius:999px;position:relative;transition:background 0.3s;" id="toggleTrack">
+              <div id="toggleKnob" style="width:18px;height:18px;background:#fff;border-radius:50%;position:absolute;top:3px;left:22px;transition:left 0.3s;box-shadow:0 1px 4px rgba(0,0,0,0.2);"></div>
+            </div>
+            <span id="statusLabel" style="font-size:0.82rem;font-weight:700;color:var(--success);">Online</span>
+          </label>
+        </div>
+        <div class="icon-btn">🔔<div class="notif-badge"></div></div>
+        <div class="user-chip"><div class="av" id="driverInitials" style="background:linear-gradient(135deg,var(--success),#059669);">DR</div><span class="nm" id="driverName">Driver Name</span> ▾</div>
+      </div>
+    </div>
+
+    <div class="dash-body">
+      <!-- Stats -->
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-card-accent green"></div><div class="stat-icon-wrap si-green">💰</div><div class="stat-num">₹2,840</div><div class="stat-lbl">Today's Earnings</div><div class="stat-delta delta-up">↑ ₹420 from yesterday</div></div>
+        <div class="stat-card"><div class="stat-card-accent purple"></div><div class="stat-icon-wrap si-purple">🚗</div><div class="stat-num">8</div><div class="stat-lbl">Trips Today</div><div class="stat-delta delta-up">↑ 2 from yesterday</div></div>
+        <div class="stat-card"><div class="stat-card-accent pink"></div><div class="stat-icon-wrap si-pink">⭐</div><div class="stat-num">4.9</div><div class="stat-lbl">Driver Rating</div><div class="stat-delta delta-up">Top rated driver</div></div>
+        <div class="stat-card"><div class="stat-card-accent orange"></div><div class="stat-icon-wrap si-orange">📅</div><div class="stat-num">₹48.2K</div><div class="stat-lbl">Monthly Earnings</div><div class="stat-delta delta-up">↑ 12% this month</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:22px;">
+        <!-- Ride Requests -->
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <h3 style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:800;">🔔 New Ride Requests</h3>
+            <span class="badge badge-warning">3 Pending</span>
+          </div>
+
+          <div class="ride-card">
+            <div class="rc-head"><div class="rc-route">Whitefield → Electronic City</div><div class="rc-price">₹450</div></div>
+            <div class="rc-meta"><span>🚐 TT Van (9 seater)</span><span>👥 8 passengers</span><span>📏 12 km</span></div>
+            <div class="rc-meta"><span>📅 Today, 9:00 AM</span><span>⏱️ ~25 min trip</span></div>
+            <div class="rc-btns"><button class="rc-accept">✅ Accept Ride</button><button class="rc-reject">✕ Decline</button></div>
+          </div>
+
+          <div class="ride-card">
+            <div class="rc-head"><div class="rc-route">Koramangala → Airport</div><div class="rc-price">₹1,200</div></div>
+            <div class="rc-meta"><span>🚌 Tempo Traveller</span><span>👥 11 passengers</span><span>📏 28 km</span></div>
+            <div class="rc-meta"><span>📅 Today, 11:00 AM</span><span>⏱️ ~45 min trip</span></div>
+            <div class="rc-btns"><button class="rc-accept">✅ Accept Ride</button><button class="rc-reject">✕ Decline</button></div>
+          </div>
+
+          <div class="ride-card">
+            <div class="rc-head"><div class="rc-route">MG Road → Mysore</div><div class="rc-price">₹3,500</div></div>
+            <div class="rc-meta"><span>🚌 Tempo Traveller</span><span>👥 12 passengers</span><span>📏 145 km</span></div>
+            <div class="rc-meta"><span>📅 Tomorrow, 6:00 AM</span><span>⏱️ ~3 hr trip</span></div>
+            <div class="rc-btns"><button class="rc-accept">✅ Accept Ride</button><button class="rc-reject">✕ Decline</button></div>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div>
+          <!-- Vehicle -->
+          <div class="card" style="padding:20px;margin-bottom:18px;">
+            <div style="font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;margin-bottom:14px;">🚐 My Vehicle</div>
+            <div style="text-align:center;font-size:4rem;margin-bottom:14px;" id="driverVehicleIcon">🚌</div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <div style="display:flex;justify-content:space-between;font-size:0.83rem;"><span style="color:var(--text-muted);">Vehicle</span><span style="font-weight:700;" id="driverVehicleType">N/A</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.83rem;"><span style="color:var(--text-muted);">Number</span><span style="font-weight:700;" id="driverVehicleNumber">N/A</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.83rem;"><span style="color:var(--text-muted);">Capacity</span><span style="font-weight:700;" id="driverVehicleCapacity">N/A</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.83rem;"><span style="color:var(--text-muted);">Status</span><span class="badge badge-success" id="driverVehicleStatus">Active</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.83rem;"><span style="color:var(--text-muted);">Driver</span><span style="font-weight:700;" id="driverProfileName">N/A</span></div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:20px;margin-bottom:18px;">
+            <div style="font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;margin-bottom:14px;">➕ Add Additional Vehicle</div>
+            <form id="vehicleForm">
+              <div class="form-group"><label class="form-label">Vehicle Model</label><input type="text" id="vehicleModel" class="form-control" placeholder="Toyota Innova" required /></div>
+              <div class="form-group"><label class="form-label">Vehicle Type</label><select id="vehicleTypeAdd" class="form-control" required><option value="">Select type</option><option value="car">Car</option><option value="tt">TT Van</option><option value="tempo">Tempo Traveller</option><option value="minibus">Mini Bus</option></select></div>
+              <div class="form-group"><label class="form-label">Vehicle Number</label><input type="text" id="vehicleNumber" class="form-control" placeholder="KA05AB1234" required /></div>
+              <div class="form-group"><label class="form-label">Seating Capacity</label><input type="number" id="vehicleSeats" class="form-control" placeholder="12" min="1" required /></div>
+              <button type="submit" class="btn btn-primary btn-full">Add Vehicle</button>
+            </form>
+          </div>
+
+          <div class="card" style="padding:20px;margin-bottom:18px;">
+            <div style="font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;margin-bottom:14px;">🚘 My Vehicles</div>
+            <div id="driverVehicleList" style="display:grid;gap:12px;">No vehicles added yet.</div>
+          </div>
+
+          <!-- Earnings Chart -->
+          <div class="card" style="padding:20px;">
+            <div style="font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;margin-bottom:14px;">📊 Weekly Earnings</div>
+            <div class="bar-chart">
+              <div class="bar" style="height:60%;" title="Mon: ₹2,400"></div>
+              <div class="bar" style="height:80%;" title="Tue: ₹3,200"></div>
+              <div class="bar" style="height:50%;" title="Wed: ₹2,000"></div>
+              <div class="bar" style="height:90%;" title="Thu: ₹3,600"></div>
+              <div class="bar" style="height:70%;" title="Fri: ₹2,800"></div>
+              <div class="bar" style="height:100%;" title="Sat: ₹4,000"></div>
+              <div class="bar" style="height:75%;opacity:0.4;" title="Today"></div>
+            </div>
+            <div class="bar-days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div style="text-align:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+              <div style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:900;color:var(--success);">₹21,000</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);">This week's earnings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

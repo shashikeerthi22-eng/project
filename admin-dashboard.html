@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="dash-wrap">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sb-logo">
+      <div class="mark">🚐</div>
+      <span class="name">Road<span>Way</span></span>
+    </div>
+    <div style="padding:0 14px 14px;"><div style="background:var(--danger-light);border:1px solid #FECACA;border-radius:var(--radius-sm);padding:5px 10px;font-size:0.7rem;font-weight:800;color:#991B1B;text-align:center;letter-spacing:1px;">🛡️ ADMIN PANEL</div></div>
+    <div class="sb-section-label">Dashboard</div>
+    <nav class="sb-nav">
+      <a class="sb-item active" href="admin-dashboard.html"><div class="si">📊</div>Overview</a>
+      <a class="sb-item" href="#" onclick="showToast('Users table','info')"><div class="si">👥</div>Manage Users</a>
+      <a class="sb-item" href="#" onclick="loadDrivers()"><div class="si">🧑‍✈️</div>Manage Drivers</a>
+      <a class="sb-item" href="#" onclick="showToast('Vehicles table','info')"><div class="si">🚐</div>Manage Vehicles</a>
+      <a class="sb-item" href="#" onclick="showToast('Bookings table','info')"><div class="si">📋</div>All Bookings</a>
+    </nav>
+    <div class="sb-section-label">System</div>
+    <nav class="sb-nav">
+      <a class="sb-item" href="#" onclick="showToast('Revenue report','info')"><div class="si">💰</div>Revenue</a>
+      <a class="sb-item" href="#" onclick="showToast('Notifications','info')"><div class="si">📢</div>Notifications<span class="badge-count">5</span></a>
+      <a class="sb-item" href="#" onclick="showToast('Settings','info')"><div class="si">⚙️</div>Settings</a>
+    </nav>
+    <div class="sb-footer">
+      <a class="sb-item" href="admin-login.html" style="color:var(--danger);"><div class="si" style="background:var(--danger-light);">🚪</div>Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="dash-main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn sb-toggle">☰</button>
+        <div class="topbar-title" id="adminTopbarTitle">Admin Dashboard 🛡️</div>
+      </div>
+      <div class="topbar-right">
+        <div class="icon-btn">🔔<div class="notif-badge"></div></div>
+        <div class="user-chip"><div class="av" style="background:linear-gradient(135deg,#1E1035,#5B21B6);" id="adminInitials">AD</div><span class="nm" id="adminNameDisplay">Super Admin</span> ▾</div>
+      </div>
+    </div>
+
+    <div class="dash-body">
+      <!-- Stats Row 1 -->
+      <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="stat-card"><div class="stat-card-accent purple"></div><div class="stat-icon-wrap si-purple">👥</div><div class="stat-num">12,480</div><div class="stat-lbl">Total Users</div><div class="stat-delta delta-up">↑ 234 this week</div></div>
+        <div class="stat-card"><div class="stat-card-accent green"></div><div class="stat-icon-wrap si-green">🧑‍✈️</div><div class="stat-num">542</div><div class="stat-lbl">Active Drivers</div><div class="stat-delta delta-up">↑ 18 this week</div></div>
+        <div class="stat-card"><div class="stat-card-accent orange"></div><div class="stat-icon-wrap si-orange">🚐</div><div class="stat-num">318</div><div class="stat-lbl">Total Vehicles</div><div class="stat-delta delta-up">↑ 12 this month</div></div>
+        <div class="stat-card"><div class="stat-card-accent pink"></div><div class="stat-icon-wrap si-pink">📋</div><div class="stat-num">8,942</div><div class="stat-lbl">Total Bookings</div><div class="stat-delta delta-up">↑ 142 today</div></div>
+      </div>
+
+      <!-- Revenue Cards -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;">
+        <div style="background:linear-gradient(135deg,var(--success),#059669);border-radius:var(--radius-lg);padding:22px;color:#fff;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">💰</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:900;">₹4.2L</div>
+          <div style="font-size:0.82rem;opacity:0.8;margin-top:4px;">Today's Revenue</div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius-lg);padding:22px;color:#fff;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">📈</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:900;">₹28.4L</div>
+          <div style="font-size:0.82rem;opacity:0.8;margin-top:4px;">Monthly Revenue</div>
+        </div>
+        <div style="background:linear-gradient(135deg,#1E1035,#5B21B6);border-radius:var(--radius-lg);padding:22px;color:#fff;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">🏆</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:900;">₹3.2Cr</div>
+          <div style="font-size:0.82rem;opacity:0.8;margin-top:4px;">Annual Revenue</div>
+        </div>
+      </div>
+
+      <!-- Users Table -->
+      <div class="table-wrap">
+        <div class="table-head">
+          <div class="table-title">👥 Users Management</div>
+          <div class="table-actions">
+            <div class="search-box"><span class="si">🔍</span><input type="text" class="search-input" placeholder="Search users..." /></div>
+            <button class="btn btn-primary btn-sm" onclick="showToast('Add user modal coming soon','info')">+ Add User</button>
+          </div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>User</th><th>Email</th><th>Phone</th><th>Trips</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr><td><div class="td-user"><div class="td-av">RK</div><span class="td-name">Rahul Khanna</span></div></td><td>rahul@example.com</td><td>+91 98765 43210</td><td>24</td><td>Jan 2025</td><td><span class="badge badge-success">Active</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('User blocked','error')">🚫</button></td></tr>
+            <tr><td><div class="td-user"><div class="td-av" style="background:linear-gradient(135deg,var(--success),#059669);">PS</div><span class="td-name">Priya Sharma</span></div></td><td>priya@example.com</td><td>+91 87654 32109</td><td>12</td><td>Feb 2025</td><td><span class="badge badge-success">Active</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('User blocked','error')">🚫</button></td></tr>
+            <tr><td><div class="td-user"><div class="td-av" style="background:linear-gradient(135deg,var(--warning),#D97706);">AJ</div><span class="td-name">Arjun Joshi</span></div></td><td>arjun@example.com</td><td>+91 76543 21098</td><td>6</td><td>Mar 2025</td><td><span class="badge badge-grey">Inactive</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('User blocked','error')">🚫</button></td></tr>
+            <tr><td><div class="td-user"><div class="td-av" style="background:linear-gradient(135deg,var(--accent),#DB2777);">SM</div><span class="td-name">Sneha Mehta</span></div></td><td>sneha@example.com</td><td>+91 65432 10987</td><td>18</td><td>Dec 2024</td><td><span class="badge badge-success">Active</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('User blocked','error')">🚫</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Drivers Table -->
+      <div class="table-wrap">
+        <div class="table-head">
+          <div class="table-title">🧑‍✈️ Drivers Management</div>
+          <div class="table-actions">
+            <div class="search-box"><span class="si">🔍</span><input type="text" class="search-input" placeholder="Search drivers..." /></div>
+            <button class="btn btn-primary btn-sm" onclick="showToast('Add driver modal coming soon','info')">+ Add Driver</button>
+          </div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Driver</th><th>Vehicle</th><th>Rating</th><th>Trips</th><th>Earnings</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr><td><div class="td-user"><div class="td-av" style="background:linear-gradient(135deg,var(--success),#059669);">RK</div><span class="td-name">Rajesh Kumar</span></div></td><td>Tempo Traveller · KA05AB1234</td><td>⭐ 4.9</td><td>1,240</td><td>₹48,200/mo</td><td><span class="badge badge-success">Online</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('Driver suspended','error')">🚫</button></td></tr>
+            <tr><td><div class="td-user"><div class="td-av">SM</div><span class="td-name">Suresh M.</span></div></td><td>TT Van · MH12CD5678</td><td>⭐ 4.7</td><td>892</td><td>₹36,400/mo</td><td><span class="badge badge-info">On Trip</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('Driver suspended','error')">🚫</button></td></tr>
+            <tr><td><div class="td-user"><div class="td-av" style="background:linear-gradient(135deg,var(--accent),#DB2777);">VR</div><span class="td-name">Vijay Rao</span></div></td><td>Car · TN09EF9012</td><td>⭐ 4.8</td><td>650</td><td>₹28,000/mo</td><td><span class="badge badge-grey">Offline</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-edit">✏️</button> <button class="action-btn ab-delete" onclick="showToast('Driver suspended','error')">🚫</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="table-wrap">
+        <div class="table-head">
+          <div class="table-title">📋 Recent Bookings</div>
+          <div class="table-actions">
+            <div class="search-box"><span class="si">🔍</span><input type="text" class="search-input" placeholder="Search bookings..." /></div>
+            <button class="btn btn-ghost btn-sm" onclick="showToast('Exporting CSV...','info')">📥 Export</button>
+          </div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Booking ID</th><th>User</th><th>Route</th><th>Vehicle</th><th>Amount</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--primary);font-weight:700;">#RW-8472</td><td>Rahul K.</td><td>Whitefield → E.City</td><td>🚐 TT Van</td><td style="color:var(--success);font-weight:700;">₹450</td><td>Today</td><td><span class="badge badge-info">Ongoing</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-delete" onclick="showToast('Booking cancelled','error')">🚫</button></td></tr>
+            <tr><td style="color:var(--primary);font-weight:700;">#RW-8395</td><td>Priya S.</td><td>Koramangala → Mysore</td><td>🚌 Tempo</td><td style="color:var(--success);font-weight:700;">₹3,200</td><td>20 Dec</td><td><span class="badge badge-success">Completed</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-delete" onclick="showToast('Action taken','error')">🚫</button></td></tr>
+            <tr><td style="color:var(--primary);font-weight:700;">#RW-8301</td><td>Arjun J.</td><td>HSR → Airport</td><td>🚗 Car</td><td style="color:var(--success);font-weight:700;">₹560</td><td>15 Dec</td><td><span class="badge badge-success">Completed</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-delete" onclick="showToast('Action taken','error')">🚫</button></td></tr>
+            <tr><td style="color:var(--primary);font-weight:700;">#RW-8264</td><td>Vijay R.</td><td>MG Road → Goa</td><td>🚍 Mini Bus</td><td style="color:var(--danger);font-weight:700;">₹12,000</td><td>12 Dec</td><td><span class="badge badge-danger">Cancelled</span></td><td><button class="action-btn ab-view">👁</button> <button class="action-btn ab-delete" onclick="showToast('Action taken','error')">🚫</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

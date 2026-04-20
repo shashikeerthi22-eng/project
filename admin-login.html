@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-side" style="background:linear-gradient(150deg,#1E1035 0%,#3B1580 60%,#4C1D95 100%);">
+    <div class="auth-side-logo"><div class="mark">🛡️</div><span class="name">Admin Portal</span></div>
+    <h2>RoadWay Admin Control Center</h2>
+    <p>Manage users, drivers, vehicles, bookings and monitor platform revenue — all in one place.</p>
+    <div class="auth-side-feats">
+      <div class="auth-feat"><div class="auth-feat-icon">👥</div>Manage 12,000+ users</div>
+      <div class="auth-feat"><div class="auth-feat-icon">🧑‍✈️</div>Monitor all drivers</div>
+      <div class="auth-feat"><div class="auth-feat-icon">📊</div>Real-time revenue dashboard</div>
+      <div class="auth-feat"><div class="auth-feat-icon">⚙️</div>Full platform control</div>
+    </div>
+  </div>
+  <div class="auth-form-side">
+    <div class="auth-box">
+      <a href="index.html" style="display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);margin-bottom:28px;"><div style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;">🚐</div>Road<span style="color:var(--primary);">Way</span></a>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--danger-light);border:1px solid #FECACA;border-radius:999px;padding:5px 14px;font-size:0.75rem;font-weight:700;color:#991B1B;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;">🛡️ Admin Portal · Restricted Access</div>
+      <h2>Admin Login</h2>
+      <p class="auth-sub">Authorized personnel only. All access is logged.</p>
+      <form id="adminLoginForm">
+        <div class="form-group"><label class="form-label">Admin Email</label><div style="position:relative;"><span class="input-icon">📧</span><input type="email" class="form-control" placeholder="admin@roadway.in" required /></div></div>
+        <div class="form-group"><label class="form-label">Password</label><div class="password-wrap" style="position:relative;"><span class="input-icon">🔒</span><input type="password" class="form-control" placeholder="Admin password" required /><button type="button" class="pwd-toggle">👁️</button></div></div>
+        <div class="form-group"><label class="form-label">Admin Access Code</label><div style="position:relative;"><span class="input-icon">🔑</span><input type="text" class="form-control" placeholder="6-digit code" maxlength="6" required /></div></div>
+        <button type="submit" class="btn btn-lg btn-full" style="background:linear-gradient(135deg,#1E1035,#5B21B6);color:#fff;box-shadow:0 4px 20px rgba(30,16,53,0.3);">🛡️ Access Admin Dashboard</button>
+      </form>
+      <p class="auth-switch" style="margin-top:20px;"><a href="login.html">← Back to User Login</a></p>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+

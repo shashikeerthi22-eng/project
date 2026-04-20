@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed – RoadWay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<nav class="navbar solid">
+  <a href="index.html" class="nav-logo"><div class="logo-mark">🚐</div>Road<span>Way</span></a>
+  <div class="nav-cta"><a href="user-dashboard.html" class="btn btn-ghost btn-sm">Dashboard</a></div>
+</nav>
+
+<div class="confirm-wrap" style="padding-top:100px;">
+  <div class="confirm-icon">✅</div>
+  <h1>Booking <span class="gradient-text">Confirmed!</span></h1>
+  <p style="color:var(--text-muted);font-size:1rem;">Your ride has been booked. Confirmation sent to your email &amp; phone.</p>
+
+  <div class="confirm-card">
+    <div class="confirm-card-head">
+      <div class="confirm-bid">Booking ID</div>
+      <div class="confirm-bid-num" id="bookingId">#RW-0000</div>
+    </div>
+    <div class="confirm-row"><span class="k">Vehicle</span><span class="v" id="vehicleInfo">🚐 Loading...</span></div>
+    <div class="confirm-row"><span class="k">Pickup</span><span class="v" id="pickupInfo">📍 Loading...</span></div>
+    <div class="confirm-row"><span class="k">Drop</span><span class="v" id="dropInfo">🏁 Loading...</span></div>
+    <div class="confirm-row"><span class="k">Date &amp; Time</span><span class="v" id="datetimeInfo">📅 Loading...</span></div>
+    <div class="confirm-row"><span class="k">Passengers</span><span class="v" id="passengersInfo">👥 Loading...</span></div>
+    <div class="confirm-row"><span class="k">Total Amount</span><span class="v-price" id="amountInfo">₹ 0</span></div>
+  </div>
+
+  <!-- Driver info -->
+  <div style="background:var(--primary-ultra);border:1.5px solid var(--border-dark);border-radius:var(--radius-lg);padding:18px;display:flex;align-items:center;gap:14px;margin-bottom:28px;text-align:left;">
+    <div style="width:50px;height:50px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:900;color:#fff;flex-shrink:0;">RK</div>
+    <div style="flex:1;"><div style="font-weight:800;margin-bottom:3px;">Rajesh Kumar</div><div style="font-size:0.8rem;color:var(--text-muted);">Your driver is 12 mins away</div></div>
+    <a href="tel:+919876543210" class="btn btn-success btn-sm">📞 Call</a>
+  </div>
+
+  <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+    <a href="tracking.html" class="btn btn-primary btn-lg">📡 Track Live Trip</a>
+    <a href="user-dashboard.html" class="btn btn-outline btn-lg">Go to Dashboard</a>
+  </div>
+</div>
+
+<script>
+// Populate confirmation page with booking data
+document.addEventListener('DOMContentLoaded', () => {
+  const booking = JSON.parse(localStorage.getItem('roadway_booking') || '{}');
+  if (booking.bookingId) {
+    document.getElementById('bookingId').textContent = booking.bookingRef || `#RW-${booking.bookingId}`;
+  }
+  if (booking.estimated) {
+    const vehicleNames = { car: 'Car – 4 Seater', tt: 'TT Van – 9 Seater', tempo: 'Tempo Traveller – 12 Seater', minibus: 'Mini Bus – 20+ Seater' };
+    document.getElementById('vehicleInfo').textContent = `🚐 ${vehicleNames[booking.vehicle_type] || 'Vehicle'}`;
+    document.getElementById('amountInfo').textContent = booking.estimated.price;
+  }
+  // Other fields from the booking object
+  if (booking.pickup) document.getElementById('pickupInfo').textContent = `📍 ${booking.pickup}`;
+  if (booking.drop_location) document.getElementById('dropInfo').textContent = `🏁 ${booking.drop_location}`;
+  if (booking.date && booking.time) {
+    const date = new Date(booking.date + ' ' + booking.time);
+    document.getElementById('datetimeInfo').textContent = `📅 ${date.toLocaleDateString()} · ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+  }
+  if (booking.passengers) document.getElementById('passengersInfo').textContent = `👥 ${booking.passengers} Passengers`;
+});
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
